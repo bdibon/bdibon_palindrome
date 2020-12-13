@@ -2,7 +2,7 @@ require "bdibon_palindrome/version"
 
 module BdibonPalindrome
   def palindrome?
-    processed_content == processed_content.reverse
+    !processed_content.empty? && processed_content == processed_content.reverse
   end
 
   # a stub method is a method that does not work but at least exist
@@ -11,7 +11,7 @@ module BdibonPalindrome
 
   private
     def processed_content
-      to_s.scan(/\w+/).join.downcase
+      to_s.strip.scan(/\w+/).join.downcase
     end
 end
 
